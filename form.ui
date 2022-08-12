@@ -121,55 +121,6 @@
           </property>
           <layout class="QVBoxLayout" name="scroll_area_layout">
            <item>
-            <widget class="QWidget" name="sample_item_widget" native="true">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>60</height>
-              </size>
-             </property>
-             <layout class="QHBoxLayout" name="item_widget_layout">
-              <item>
-               <widget class="QCheckBox" name="sample_checkbox">
-                <property name="font">
-                 <font>
-                  <pointsize>48</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Habit 2</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="sample_button">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="autoFillBackground">
-                 <bool>true</bool>
-                </property>
-                <property name="text">
-                 <string>X</string>
-                </property>
-                <property name="flat">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
             <spacer name="verticalSpacer_2">
              <property name="orientation">
               <enum>Qt::Vertical</enum>

@@ -15,10 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QScrollArea,
-    QSizePolicy, QSpacerItem, QStackedWidget, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
+    QLineEdit, QPushButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -85,39 +84,6 @@ class Ui_Form(object):
         self.scroll_area_widget.setGeometry(QRect(0, 0, 664, 347))
         self.scroll_area_layout = QVBoxLayout(self.scroll_area_widget)
         self.scroll_area_layout.setObjectName(u"scroll_area_layout")
-        self.sample_item_widget = QWidget(self.scroll_area_widget)
-        self.sample_item_widget.setObjectName(u"sample_item_widget")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.sample_item_widget.sizePolicy().hasHeightForWidth())
-        self.sample_item_widget.setSizePolicy(sizePolicy2)
-        self.sample_item_widget.setMinimumSize(QSize(0, 60))
-        self.item_widget_layout = QHBoxLayout(self.sample_item_widget)
-        self.item_widget_layout.setObjectName(u"item_widget_layout")
-        self.sample_checkbox = QCheckBox(self.sample_item_widget)
-        self.sample_checkbox.setObjectName(u"sample_checkbox")
-        font1 = QFont()
-        font1.setPointSize(48)
-        self.sample_checkbox.setFont(font1)
-
-        self.item_widget_layout.addWidget(self.sample_checkbox)
-
-        self.sample_button = QPushButton(self.sample_item_widget)
-        self.sample_button.setObjectName(u"sample_button")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.sample_button.sizePolicy().hasHeightForWidth())
-        self.sample_button.setSizePolicy(sizePolicy3)
-        self.sample_button.setAutoFillBackground(True)
-        self.sample_button.setFlat(True)
-
-        self.item_widget_layout.addWidget(self.sample_button)
-
-
-        self.scroll_area_layout.addWidget(self.sample_item_widget)
-
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.scroll_area_layout.addItem(self.verticalSpacer_2)
@@ -167,8 +133,6 @@ class Ui_Form(object):
         self.pushButton.setText(QCoreApplication.translate("Form", u"Habits", None))
         self.pushButton_2.setText(QCoreApplication.translate("Form", u"Charts", None))
         self.label.setText(QCoreApplication.translate("Form", u"Habits", None))
-        self.sample_checkbox.setText(QCoreApplication.translate("Form", u"Habit 2", None))
-        self.sample_button.setText(QCoreApplication.translate("Form", u"X", None))
         self.new_button.setText(QCoreApplication.translate("Form", u"New", None))
     # retranslateUi
 
