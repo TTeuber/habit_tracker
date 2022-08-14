@@ -30,7 +30,7 @@
      </property>
      <layout class="QVBoxLayout" name="sidebar_layout">
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="habits_select_button">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -43,7 +43,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="charts_select_button">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -86,9 +86,9 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
-     <widget class="QWidget" name="page">
+     <widget class="QWidget" name="habit_page">
       <layout class="QVBoxLayout" name="habit_page_layout">
        <item>
         <widget class="QLabel" name="label">
@@ -167,7 +167,51 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="page_2"/>
+     <widget class="QWidget" name="graph_page">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QWidget" name="widget_3" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="bar_chart_button">
+            <property name="text">
+             <string>Chart 1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="line_plot_button">
+            <property name="text">
+             <string>Chart 2</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QStackedWidget" name="graph_stack">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="bar_chart_page"/>
+         <widget class="QWidget" name="line_plot_page"/>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>

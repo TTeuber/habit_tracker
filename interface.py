@@ -36,17 +36,17 @@ class Ui_Form(object):
         self.widget.setMinimumSize(QSize(200, 0))
         self.sidebar_layout = QVBoxLayout(self.widget)
         self.sidebar_layout.setObjectName(u"sidebar_layout")
-        self.pushButton = QPushButton(self.widget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(0, 100))
+        self.habits_select_button = QPushButton(self.widget)
+        self.habits_select_button.setObjectName(u"habits_select_button")
+        self.habits_select_button.setMinimumSize(QSize(0, 100))
 
-        self.sidebar_layout.addWidget(self.pushButton)
+        self.sidebar_layout.addWidget(self.habits_select_button)
 
-        self.pushButton_2 = QPushButton(self.widget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setMinimumSize(QSize(0, 100))
+        self.charts_select_button = QPushButton(self.widget)
+        self.charts_select_button.setObjectName(u"charts_select_button")
+        self.charts_select_button.setMinimumSize(QSize(0, 100))
 
-        self.sidebar_layout.addWidget(self.pushButton_2)
+        self.sidebar_layout.addWidget(self.charts_select_button)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -63,11 +63,11 @@ class Ui_Form(object):
         sizePolicy1.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
         self.stackedWidget.setSizePolicy(sizePolicy1)
         self.stackedWidget.setMinimumSize(QSize(600, 600))
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.habit_page_layout = QVBoxLayout(self.page)
+        self.habit_page = QWidget()
+        self.habit_page.setObjectName(u"habit_page")
+        self.habit_page_layout = QVBoxLayout(self.habit_page)
         self.habit_page_layout.setObjectName(u"habit_page_layout")
-        self.label = QLabel(self.page)
+        self.label = QLabel(self.habit_page)
         self.label.setObjectName(u"label")
         font = QFont()
         font.setPointSize(64)
@@ -76,7 +76,7 @@ class Ui_Form(object):
 
         self.habit_page_layout.addWidget(self.label)
 
-        self.scrollArea = QScrollArea(self.page)
+        self.scrollArea = QScrollArea(self.habit_page)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setWidgetResizable(True)
         self.scroll_area_widget = QWidget()
@@ -92,7 +92,7 @@ class Ui_Form(object):
 
         self.habit_page_layout.addWidget(self.scrollArea)
 
-        self.widget_2 = QWidget(self.page)
+        self.widget_2 = QWidget(self.habit_page)
         self.widget_2.setObjectName(u"widget_2")
         sizePolicy.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
         self.widget_2.setSizePolicy(sizePolicy)
@@ -112,17 +112,54 @@ class Ui_Form(object):
 
         self.habit_page_layout.addWidget(self.widget_2)
 
-        self.stackedWidget.addWidget(self.page)
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.stackedWidget.addWidget(self.page_2)
+        self.stackedWidget.addWidget(self.habit_page)
+        self.graph_page = QWidget()
+        self.graph_page.setObjectName(u"graph_page")
+        self.verticalLayout = QVBoxLayout(self.graph_page)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.widget_3 = QWidget(self.graph_page)
+        self.widget_3.setObjectName(u"widget_3")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.widget_3.sizePolicy().hasHeightForWidth())
+        self.widget_3.setSizePolicy(sizePolicy2)
+        self.widget_3.setMinimumSize(QSize(0, 100))
+        self.horizontalLayout = QHBoxLayout(self.widget_3)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.bar_chart_button = QPushButton(self.widget_3)
+        self.bar_chart_button.setObjectName(u"bar_chart_button")
+
+        self.horizontalLayout.addWidget(self.bar_chart_button)
+
+        self.line_plot_button = QPushButton(self.widget_3)
+        self.line_plot_button.setObjectName(u"line_plot_button")
+
+        self.horizontalLayout.addWidget(self.line_plot_button)
+
+
+        self.verticalLayout.addWidget(self.widget_3)
+
+        self.graph_stack = QStackedWidget(self.graph_page)
+        self.graph_stack.setObjectName(u"graph_stack")
+        self.bar_chart_page = QWidget()
+        self.bar_chart_page.setObjectName(u"bar_chart_page")
+        self.graph_stack.addWidget(self.bar_chart_page)
+        self.line_plot_page = QWidget()
+        self.line_plot_page.setObjectName(u"line_plot_page")
+        self.graph_stack.addWidget(self.line_plot_page)
+
+        self.verticalLayout.addWidget(self.graph_stack)
+
+        self.stackedWidget.addWidget(self.graph_page)
 
         self.gridLayout.addWidget(self.stackedWidget, 0, 1, 1, 1)
 
 
         self.retranslateUi(Form)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
+        self.graph_stack.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Form)
@@ -130,9 +167,11 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"Habits", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Charts", None))
+        self.habits_select_button.setText(QCoreApplication.translate("Form", u"Habits", None))
+        self.charts_select_button.setText(QCoreApplication.translate("Form", u"Charts", None))
         self.label.setText(QCoreApplication.translate("Form", u"Habits", None))
         self.new_button.setText(QCoreApplication.translate("Form", u"New", None))
+        self.bar_chart_button.setText(QCoreApplication.translate("Form", u"Chart 1", None))
+        self.line_plot_button.setText(QCoreApplication.translate("Form", u"Chart 2", None))
     # retranslateUi
 
